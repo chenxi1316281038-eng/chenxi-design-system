@@ -45,12 +45,12 @@
 
 ### 变化感
 - 每页排版要有变化——不能所有页都一样的layout
-- 深色面板页 / 浅色页 / 强调色面板穿插使用
+- 暖白页 / 薄荷白页 / 柔叶绿强调页穿插使用；深苔绿面板只留给代码或终端内容
 - 大留白页和信息密度页交替
 
 ### 绝对禁忌
 - ❌ 不要用左侧彩色竖线的卡片
-- ❌ 不要用红色圆点前缀
+- ❌ 不要用蜂蜜黄圆点前缀堆砌列表
 - ❌ 不要千篇一律列表（每项前面一个圆点/数字的平铺排列）
 - ❌ 不要HTML默认blockquote样式
 - ❌ 不要所有页都用同一种layout
@@ -60,11 +60,11 @@
 ## 🧩 卡片结构模板
 
 ### P1 封面
-- 大标题（84px）用汇文明朝体（Huiwen Mincho），关键词用蓝色高亮块（`background: #2B7FD8; color: #fff; padding: 4px 16px; border-radius: 6px`）
+- 大标题（84px）用 Noto Serif SC；关键词用深苔绿文字或柔叶绿高亮（`background: #E4F3BF; color: #3E4239; padding: 4px 16px; border-radius: 6px`）
 - 副标题（44px）一行显示，紧跟标题下方，`white-space: nowrap`
-- 圆形头像（`avatar.jpg`，120px，`border: 4px solid #F4D758`）
+- 圆形头像（`avatar.jpg`，120px，`border: 4px solid #E4F3BF`）
 - 署名（作者名）44px + 介绍34px
-- 整体边框：`border: 28px solid #F4D758`
+- 整体边框：`border: 28px solid #E4F3BF`
 - 背景加浅色网格质感（`background-image: linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px); background-size: 40px 40px`）
 - 中间留白区域给用户放效果图/截图
 
@@ -74,7 +74,7 @@
 - 页码编号用 oversized 淡色装饰数字
 
 ### 最后一页 尾页
-- 金句（oversized引号装饰 `"` ，Fraunces 200px，opacity 0.15）
+- 金句（oversized引号装饰 `"` ，DM Serif Display 200px，opacity 0.15）
 - 圆形头像 + 署名（作者名）
 - CTA：「关注 + 作者名」（英文卡片可用你的固定英文 CTA 短语）
 - 一行小字：你的签名档（见 `components.md` #43，中英文按卡片语言选择）
@@ -88,13 +88,13 @@
 
 | 手法 | 适用场景 | 要点 |
 |------|----------|------|
-| 深色面板 | 代码、文件树、重点强调 | 暗色背景(#1A1A2E)+亮色文字，圆角16px |
+| 深苔绿面板 | 代码、文件树、重点强调 | 深苔绿背景(#37674B)+暖白文字，圆角16px |
 | oversized编号 | 步骤/流程展示 | 极大(64-120px)极淡色(opacity 0.12)做背景装饰 |
-| 色块交替行 | 对比/表格 | 暖底行(#faf6eb) vs 白底行(#fff) 交替 |
-| 大箭头流程 | 步骤连接 | 蓝色箭头(48px)连接流程块 |
+| 色块交替行 | 对比/表格 | 薄荷白(#F4FAEC) vs 暖白(#FFFDF4) 交替 |
+| 大箭头流程 | 步骤连接 | 深苔绿箭头(48px)连接流程块 |
 | 代码面板 | 代码/文件树/命令 | 深色底+Fira Code+三色圆点title bar |
 | 金句装饰 | 核心观点/结尾 | oversized引号+白底圆角卡片 |
-| 问题→解法对比行 | before/after | 左红底右蓝底，✗ vs ✓ 前缀 |
+| 问题→解法对比行 | before/after | 左薄荷白右柔叶绿，✗ vs ✓ 前缀 |
 | 图标+文字横排 | 要点/优势列表 | emoji/icon左对齐+文字说明 |
 
 ---
@@ -105,7 +105,7 @@
 - 头像源文件：`assets/avatar.jpg`（HTML内用相对路径 `avatar.jpg` 引用，交付时复制到输出HTML同目录）
 - 署名固定为你在 `template-cards.html` 中配置的作者名（模板内为占位符，使用前替换）
 - 品牌三色比例：主色6 : 强调3 : 点缀1
-- 背景主色：奶白 `#fefcf6` / 深奶 `#faf6eb`，深色面板用 `#1A1A2E`
+- 背景主色：暖白 `#FFFDF4` / 薄荷白 `#F4FAEC`；深苔绿 `#37674B` 只用于代码面板
 
 ---
 
@@ -113,7 +113,7 @@
 
 用于 Twitter/Instagram 等出海平台的英文卡片，在上述规范基础上调整：
 
-- 标题/金句用 **Fraunces italic**（替代中文的 Noto Serif SC），手写标注用 **Caveat**
+- 标题/金句用 **DM Serif Display italic**（替代中文的 Noto Serif SC），手写标注用 **Caveat**
 - 文案风格：除专有名词/缩写外全小写，句首字母大写
 - 英文单词较长，标题字号可比中文规范上浮（封面可到 110-130px），注意单词换行不截断
 - 尾页 CTA 用你的固定英文短语替代「关注 + 作者名」，签名档用英文版（见 `components.md` #43）
@@ -123,7 +123,7 @@
 ## ✅ Checklist（做完自查）
 
 - [ ] 每页字号是否适配手机阅读（标题≥48px，正文≥36px）
-- [ ] 是否有丑的默认组件（竖线列表、红圆点、默认blockquote）
+- [ ] 是否有丑的默认组件（竖线列表、点状前缀堆砌、默认 blockquote）
 - [ ] 每页是否撑满画面（内容占满1080×1440，有呼吸感但不留大片空白）
 - [ ] 页面之间排版是否有变化（不能连续3页同一layout）
 - [ ] 品牌三色比例 6:3:1

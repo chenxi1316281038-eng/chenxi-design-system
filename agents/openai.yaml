@@ -1,0 +1,7 @@
+interface:
+  display_name: "Lucion 个人设计系统"
+  short_description: "为陈晞的网站和内容生成统一的明亮嫩绿 IP 视觉。"
+  brand_color: "#B4D878"
+  default_prompt: "Use $chenxi-design-system to design a fresh, warm personal page with the Lucion IP."
+policy:
+  allow_implicit_invocation: true

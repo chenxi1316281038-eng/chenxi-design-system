@@ -8,21 +8,21 @@
 
 | 用途 | 变量名 | 色值 | 说明 |
 |------|--------|------|------|
-| 主黄 | `--yellow` | `#F4D758` | 强调、装饰圆圈、连接线、badges |
-| 柔黄 | `--yellow-soft` | `#FFF3CD` | 背景块、气泡底色 |
-| 主蓝 | `--blue` | `#2B7FD8` | 英文标题、超链、重点标记 |
-| 深蓝 | `--blue-deep` | `#1E5BA8` | 大装饰字、section数字编号 |
-| 红色 | `--red` | `#E84A5F` | 点缀、高亮下划线、标签 |
-| 奶白底 | `--cream` | `#fefcf6` | 页面主背景 |
-| 深奶底 | `--cream-dark` | `#faf6eb` | section间交替背景 |
-| 墨色 | `--ink` | `#1A1A2E` | 正文主色（非纯黑） |
-| 浅墨 | `--ink-light` | `#4A4A5A` | 次要正文 |
-| 淡墨 | `--ink-faint` | `#8A8A9A` | 辅助文字、标签 |
+| 柔叶绿 | `--yellow` | `#E4F3BF` | 浅色区块、连接线、badges |
+| 薄荷白 | `--yellow-soft` | `#F4FAEC` | 背景块、气泡底色 |
+| 嫩叶绿 | `--blue` | `#B4D878` | 大色块、重点标记 |
+| 深苔绿 | `--blue-deep` | `#37674B` | 标题、链接、section 数字编号 |
+| 蜂蜜黄 | `--red` | `#FFD77B` | 小面积点缀、高亮、标签 |
+| 奶白底 | `--cream` | `#FFFDF4` | 页面主背景 |
+| 深奶底 | `--cream-dark` | `#F4FAEC` | section间交替背景 |
+| 墨色 | `--ink` | `#3E4239` | 正文主色（非纯黑） |
+| 浅墨 | `--ink-light` | `#62685D` | 次要正文 |
+| 淡墨 | `--ink-faint` | `#858C7E` | 辅助文字、标签 |
 
 ### 色彩原则
 - 绝不用纯黑 `#000` 或纯白 `#fff`——总是带暖调
-- 主色永远是暖黄+蓝，红色只做点缀
-- 背景用径向渐变制造层次感，不要纯平色
+- 嫩叶绿用于识别和块面，深苔绿用于小字号文字、链接和按钮，蜂蜜黄只做点缀
+- 背景以暖白和薄荷白为主；只用极淡的叶形或纸张肌理制造层次，不堆叠渐变
 
 ---
 
@@ -30,9 +30,8 @@
 
 | 用途 | 字体 | 备注 |
 |------|------|------|
-| 英文标题/装饰 | `Fraunces` (Google Fonts) | italic用于副标题、accent文字 |
-| 中文标题首选 | `Huiwen Mincho`（汇文明朝体） | 品牌真正用的标题字体，需本地字体文件 |
-| 中文标题备选 | `Noto Serif SC` (Google Fonts) | 当无汇文明朝体时使用 |
+| 英文标题/装饰 | `DM Serif Display` (Google Fonts) | italic用于副标题、accent文字 |
+| 中文标题 | `Noto Serif SC` (Google Fonts) | 固定标题字体，700/900 |
 | 正文/UI | `Noto Sans SC` + 系统栈 `-apple-system, 'PingFang SC', 'Helvetica Neue', sans-serif` | 无衬线保证可读性 |
 | 手写装饰 | `Caveat` (Google Fonts) | 轻松标注、注释性文字 |
 
@@ -64,13 +63,13 @@
 1. **Hero分栏**: 左文字 + 右大图，grid两栏
 2. **Sticky侧栏**: 左边大装饰字sticky，右边内容滚动
 3. **时间线交错**: 中轴线+左右交替内容块（适合并列要点）
-4. **全宽深色面板**: 突出某个重要内容，打破节奏
+4. **全宽柔绿面板**: 突出一个重要内容，用 `--yellow` 或 `--cream-dark` 建立节奏
 5. **Step引导**: 圆形编号+虚线连接+每步说明
 6. **卡片网格**: 2~3列等宽卡片（注意：不要出现落单的孤儿卡片）
 7. **产品出血型Hero**: 左侧40%紧凑文字（大标题+描述+缩略图），右侧60%大图溢出右边界。图片用 `margin-right: -5vw; border-radius: 24px 0 0 24px`，grid: `grid-template-columns: 0.4fr 0.6fr`
-8. **条纹Editorial**: 条纹分割带（repeating-linear-gradient）做section分隔。内部左图右文，图片可加低饱和度滤镜。标题用Fraunces大号italic，正文小号无衬线
+8. **条纹Editorial**: 条纹分割带（repeating-linear-gradient）做section分隔。内部左图右文，图片可加低饱和度滤镜。标题用DM Serif Display大号italic，正文小号无衬线
 9. **横向滚动时间线**: flex横排 + scroll-snap + 固定宽度卡片，适合经历展示、项目历程
-10. **全宽品牌色面板**: 背景使用蓝/黄/橙纯色，文字反白。一页最多1~2个，用于打破奶白底的节奏。禁忌：不要在品牌色面板上放蓝色文字
+10. **全宽品牌色面板**: 背景使用柔叶绿或深苔绿；文字分别用炭灰或暖白。一页最多 1 个，用于打破暖白底的节奏。
 11. **对称双栏（Pain展示）**: `grid-template-columns: 1fr 1fr`，min-height: 100vh。左侧大字标题，右侧列表/解释。适合问题/痛点、before/after对比
 
 ### 间距系统
@@ -85,9 +84,9 @@
 
 ### 可用的装饰手法
 - **虚线圆圈**: `border: 2.5px dashed var(--yellow); border-radius: 50%`，半透明，大尺寸做背景
-- **渐变光晕**: `radial-gradient(ellipse, rgba(255,217,61,0.18), transparent)` 做柔和背景
-- **分割线**: `linear-gradient(90deg, transparent, var(--yellow), transparent)` 1px渐隐线
-- **高亮标记**: `background: linear-gradient(180deg, transparent 50%, rgba(255,217,61,0.35) 50%)` 文字底部高亮
+- **叶形光晕**: `radial-gradient(ellipse, rgba(180,216,120,0.18), transparent)` 做极淡背景
+- **分割线**: `linear-gradient(90deg, transparent, var(--yellow), transparent)` 1px 渐隐线
+- **高亮标记**: `background: linear-gradient(180deg, transparent 50%, rgba(180,216,120,0.35) 50%)` 文字底部高亮
 - **大透明数字**: 超大字号 + `opacity: 0.12~0.2` 做section装饰
 - **SVG简笔画**: 用描边风格的简化示意图，不要写实截图
 - **底部色条**: `border-bottom: 4px solid var(--yellow/blue/red)` 给卡片加标识（禁止使用 border-left 竖线引用块）
@@ -100,8 +99,8 @@
     0deg,
     transparent,
     transparent 3px,
-    rgba(232, 74, 95, 0.08) 3px,
-    rgba(232, 74, 95, 0.08) 4px
+    rgba(255, 215, 123, 0.08) 3px,
+    rgba(255, 215, 123, 0.08) 4px
   );
 }
 ```
@@ -144,7 +143,7 @@
   content: '';
   position: absolute;
   inset: -6px;
-  border: 1.5px solid rgba(74, 125, 232, 0.2);
+  border: 1.5px solid rgba(55, 103, 75, 0.2);
   border-radius: 16px;
 }
 ```
@@ -186,7 +185,7 @@
 - `unobserve` after triggering（只触发一次）
 - 用 `.reveal-d1` ~ `.reveal-d5` 做 stagger（0.1s递增）
 - 尊重 `prefers-reduced-motion`
-- 选中文本高亮：`::selection { background: #F4D758; color: #1a1a1a; }`
+- 选中文本高亮：`::selection { background: #E4F3BF; color: #1a1a1a; }`
 
 ### 动效原则
 - **只用 opacity + transform**，不要animate layout属性
@@ -197,7 +196,7 @@
 ### 明确禁止
 - ❌ 不要用 `transform: rotate()` 让元素歪着放——这是廉价的假活泼
 - ❌ 不要故意错位/偏移来制造"手工感"
-- ❌ 不要蓝底面板上放红色文字
+- ❌ 不要在嫩叶绿或柔叶绿面板上使用低对比文字
 
 ---
 
@@ -226,11 +225,11 @@
 
 ## 🧩 可发散方向
 
-- **配色微调**: 内容跟某品牌相关时可替换主蓝为品牌色，但暖黄+奶白底不变
+- **配色微调**: 合作内容可引入一个合作色，但不替换 Lucion 的暖白、绿色主轴与文字色
 - **布局组合**: 十一种布局模式自由组合
 - **装饰密度**: 轻松内容多装饰，严肃内容减少装饰只保留字体层次
-- **IP出现方式**: 不同姿势（叉腰、放大镜、坐椅子等）
-- **深色section**: 可用一个section用深色底（如 `--blue-deep`），制造节奏对比
+- **IP出现方式**: Lucion 可用记录、倾听、观察、连接、共同创作等状态；页面不强制出现角色
+- **深色 section**: 仅在代码或终端内容中使用一个深苔绿面板，其他内容保持明亮
 - **交互**: 如果内容适合，可加hover状态、tab切换、accordion——但不要为交互而交互
 
 ---

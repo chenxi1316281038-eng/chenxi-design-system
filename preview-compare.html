@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设计方向对比 · Lucion</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Serif+Display:ital@0;1&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,800;1,9..144,400&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink: #252526; --paper: #F5F5F0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; color: var(--ink); background: var(--paper); font-family: 'Noto Sans SC', sans-serif; }
+    .intro { max-width: 1150px; margin: 0 auto; padding: 58px 28px 25px; }
+    .intro p { margin: 0; color: #676764; font-size: .9rem; line-height: 1.8; }
+    .intro h1 { margin: 8px 0 12px; font-family: 'Noto Serif SC', serif; font-size: clamp(2rem, 4vw, 3.7rem); letter-spacing: -.05em; }
+    .compare { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 1150px; margin: 0 auto 35px; overflow: hidden; border-radius: 26px; box-shadow: 0 16px 45px rgba(30, 34, 27, .08); }
+    .side { position: relative; min-height: 670px; padding: 38px clamp(26px, 4vw, 54px); overflow: hidden; }
+    .tag { display: inline-block; margin-bottom: 22px; font-size: .72rem; font-weight: 700; letter-spacing: .16em; }
+    .side h2 { max-width: 460px; margin: 0; font-size: clamp(2.5rem, 4.8vw, 4.6rem); line-height: 1.04; letter-spacing: -.07em; }
+    .side .body { position: relative; z-index: 2; max-width: 330px; margin-top: 22px; font-size: 1rem; line-height: 1.9; }
+    .swatches { display: flex; gap: 9px; margin-top: 28px; }
+    .swatches span { width: 28px; height: 28px; border-radius: 50%; border: 2px solid rgba(255,255,255,.7); }
+    .avatar { position: absolute; z-index: 2; right: 18px; bottom: 10px; width: min(47%, 280px); overflow: hidden; background: white; border-radius: 50% 50% 42% 42%; }
+    .avatar img { display: block; width: 100%; }
+    .caption { max-width: 1150px; margin: 0 auto 60px; padding: 0 28px; }
+    .caption-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+    .caption article { padding: 21px 22px; background: white; border-radius: 16px; }
+    .caption h3 { margin: 0 0 8px; font-size: 1rem; }
+    .caption p { margin: 0; color: #686864; font-size: .9rem; line-height: 1.8; }
+
+    .original { color: #1A1A2E; background: #FEFCF6; }
+    .original::before { position: absolute; top: -105px; right: -92px; width: 365px; height: 365px; content: ''; background: #F4D758; border-radius: 50%; }
+    .original::after { position: absolute; bottom: -70px; left: -55px; width: 230px; height: 230px; content: ''; border: 35px solid #2B7FD8; border-radius: 50%; }
+    .original .tag { color: #E84A5F; }
+    .original h2 { font-family: Fraunces, 'Noto Serif SC', serif; }
+    .original h2 em { color: #2B7FD8; font-style: italic; }
+    .original .body strong { color: #E84A5F; }
+    .original .note { position: absolute; z-index: 3; right: 6%; bottom: 5%; padding: 6px 12px; color: #2B7FD8; background: #FFF3CD; font-family: Caveat, cursive; font-size: 1.25rem; transform: rotate(-6deg); }
+
+    .lucion { color: #3E4239; background: #FFFDF4; }
+    .lucion::before { position: absolute; top: -75px; right: -60px; width: 350px; height: 350px; content: ''; background: #E4F3BF; border-radius: 48% 52% 45% 55%; transform: rotate(-14deg); }
+    .lucion::after { position: absolute; bottom: 68px; left: 38px; width: 52px; height: 52px; content: ''; background: #FFD77B; border-radius: 50%; opacity: .9; }
+    .lucion .tag { color: #37674B; }
+    .lucion h2 { font-family: 'Noto Serif SC', serif; }
+    .lucion h2 em { color: #37674B; font-family: 'DM Serif Display', serif; font-weight: 400; }
+    .lucion .body strong { color: #37674B; }
+    .lucion .note { position: absolute; z-index: 3; right: 6%; bottom: 5%; padding: 7px 13px; color: #37674B; background: #FFFDF4; border: 1px solid rgba(55,103,75,.18); border-radius: 99px; box-shadow: 0 10px 20px rgba(55,103,75,.1); font-family: Caveat, cursive; font-size: 1.25rem; transform: rotate(-5deg); }
+
+    @media (max-width: 760px) { .compare, .caption-grid { grid-template-columns: 1fr; } .side { min-height: 600px; } .intro { padding-top: 36px; } }
+  </style>
+</head>
+<body>
+  <header class="intro">
+    <p>同一内容 · 同一角色 · 仅比较视觉系统</p>
+    <h1>原版的强记忆点，和 Lucion 的温柔识别感。</h1>
+    <p>左侧只呈现上游系统的色彩与排版节奏，不代表其原始 IP；右侧是为 Lucion 定制的方向。</p>
+  </header>
+
+  <main class="compare">
+    <section class="side original">
+      <span class="tag">ESTHER SYSTEM · ORIGINAL TONE</span>
+      <h2>把想法，<br><em>做得有力。</em></h2>
+      <p class="body">蓝、黄、红形成强对比与快速节奏。它更像一个有编辑感的<strong>创作者设计系统</strong>，适合表达观点与活动。</p>
+      <div class="swatches" aria-label="原版色板"><span style="background:#2B7FD8"></span><span style="background:#F4D758"></span><span style="background:#E84A5F"></span></div>
+      <div class="avatar"><img src="assets/character.png" alt="用于比较的 Lucion 角色形象"></div>
+      <span class="note">make it bold!</span>
+    </section>
+
+    <section class="side lucion">
+      <span class="tag">LUCION · CHENXI SYSTEM</span>
+      <h2>慢一点，<br>也能<em>向前。</em></h2>
+      <p class="body">绿、暖白与少量蜂蜜黄留出更大的呼吸空间。它更像一个耐心、清晰的<strong>个人陪伴者</strong>，适合长期阅读与信任建立。</p>
+      <div class="swatches" aria-label="Lucion 色板"><span style="background:#B4D878"></span><span style="background:#E4F3BF"></span><span style="background:#FFD77B"></span><span style="background:#37674B"></span></div>
+      <div class="avatar"><img src="assets/character.png" alt="Lucion，穿嫩绿外套的 Q 版男性角色"></div>
+      <span class="note">grow gently</span>
+    </section>
+  </main>
+
+  <section class="caption">
+    <div class="caption-grid">
+      <article><h3>原版</h3><p>对比强、语气更外放；视觉焦点更密集，适合活动、教程和观点型内容。</p></article>
+      <article><h3>Lucion</h3><p>明亮却不刺眼，以深苔绿保证阅读性；更适合个人履历、心理学文章、陪伴产品与长期内容。</p></article>
+    </div>
+  </section>
+</body>
+</html>

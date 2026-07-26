@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucion · 陈晞</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=DM+Serif+Display:ital@0;1&family=Noto+Sans+SC:wght@400;500;700&family=Noto+Serif+SC:wght@700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --leaf: #B4D878;
+      --leaf-deep: #37674B;
+      --leaf-soft: #E4F3BF;
+      --honey: #FFD77B;
+      --warm-white: #FFFDF4;
+      --mint-white: #F4FAEC;
+      --ink: #3E4239;
+      --blush: #F4B6AB;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      min-width: 320px;
+      margin: 0;
+      color: var(--ink);
+      background: var(--warm-white);
+      font-family: 'Noto Sans SC', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    main { overflow: hidden; }
+    .hero {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, .95fr) minmax(360px, .8fr);
+      align-items: center;
+      gap: clamp(36px, 7vw, 108px);
+      min-height: 100vh;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: clamp(44px, 8vw, 108px) clamp(24px, 5vw, 72px);
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 22px;
+      color: var(--leaf-deep);
+      font-size: .76rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .eyebrow::before {
+      width: 20px;
+      height: 20px;
+      content: '';
+      background: var(--leaf);
+      border-radius: 14px 2px 14px 2px;
+      transform: rotate(-25deg);
+    }
+    h1 {
+      max-width: 620px;
+      margin: 0;
+      font-family: 'Noto Serif SC', serif;
+      font-size: clamp(3.25rem, 7vw, 6.2rem);
+      font-weight: 900;
+      letter-spacing: -.06em;
+      line-height: 1.1;
+    }
+    h1 em {
+      display: inline-block;
+      color: var(--leaf-deep);
+      font-family: 'DM Serif Display', serif;
+      font-weight: 400;
+      letter-spacing: -.04em;
+    }
+    .intro {
+      max-width: 470px;
+      margin: 30px 0 0;
+      color: #55594E;
+      font-size: clamp(1rem, 1.7vw, 1.18rem);
+      line-height: 2;
+    }
+    .intro strong { color: var(--leaf-deep); }
+    .signature {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 36px;
+      font-weight: 700;
+    }
+    .signature span {
+      width: 38px;
+      height: 2px;
+      background: var(--honey);
+    }
+
+    .character-stage {
+      position: relative;
+      display: grid;
+      place-items: center;
+      min-height: min(72vw, 650px);
+    }
+    .sun {
+      position: absolute;
+      width: min(47vw, 485px);
+      aspect-ratio: 1;
+      background: var(--leaf-soft);
+      border-radius: 48% 52% 45% 55% / 57% 42% 58% 43%;
+      transform: rotate(-14deg);
+    }
+    .sun::after {
+      position: absolute;
+      right: 12%;
+      bottom: 7%;
+      width: 26%;
+      aspect-ratio: 1;
+      content: '';
+      background: var(--honey);
+      border-radius: 50%;
+      opacity: .78;
+    }
+    .portrait {
+      position: relative;
+      z-index: 1;
+      width: min(53vw, 540px);
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: #fff;
+      border: 10px solid #fff;
+      border-radius: 48% 52% 52% 48% / 48% 49% 51% 52%;
+      box-shadow: 0 22px 45px rgba(98, 138, 92, .14);
+      transform: rotate(3deg);
+    }
+    .portrait img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .note {
+      position: absolute;
+      z-index: 2;
+      right: -2%;
+      bottom: 8%;
+      padding: 10px 16px;
+      color: var(--leaf-deep);
+      background: var(--warm-white);
+      border: 1px solid rgba(98, 138, 92, .18);
+      border-radius: 100px;
+      box-shadow: 0 12px 25px rgba(98, 138, 92, .1);
+      font-family: Caveat, cursive;
+      font-size: clamp(1.3rem, 2vw, 1.7rem);
+      transform: rotate(-5deg);
+    }
+    .butterfly {
+      position: absolute;
+      z-index: 2;
+      top: 10%;
+      right: 4%;
+      width: 40px;
+      height: 26px;
+    }
+    .butterfly::before, .butterfly::after {
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 25px;
+      content: '';
+      background: var(--leaf-deep);
+      border-radius: 100% 10% 100% 10%;
+    }
+    .butterfly::before { left: 0; transform: rotate(-30deg); }
+    .butterfly::after { right: 0; transform: scaleX(-1) rotate(-30deg); }
+
+    .values {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      max-width: 1240px;
+      margin: 0 auto clamp(70px, 10vw, 132px);
+      background: rgba(98, 138, 92, .17);
+      border: 1px solid rgba(98, 138, 92, .17);
+      border-radius: 22px;
+      overflow: hidden;
+    }
+    .value {
+      min-height: 170px;
+      padding: 28px;
+      background: var(--mint-white);
+    }
+    .value:nth-child(2) { background: var(--warm-white); }
+    .value i {
+      display: block;
+      color: var(--leaf-deep);
+      font-family: 'DM Serif Display', serif;
+      font-size: 2rem;
+      font-style: italic;
+    }
+    .value p { margin: 8px 0 0; line-height: 1.8; }
+
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 72px; }
+      .character-stage { order: -1; min-height: 76vw; }
+      .portrait { width: min(76vw, 440px); }
+      .sun { width: min(70vw, 420px); }
+      .values { grid-template-columns: 1fr; margin: 0 24px 68px; }
+      .value { min-height: 128px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">LUCION · PERSONAL COMPANION</p>
+        <h1>慢一点，<br>也能<em>向前</em>。</h1>
+        <p class="intro">以应用心理学的细腻观察，连接 <strong>人、工作与 AI 陪伴</strong>。这是一个清新、明亮而不喧哗的个人空间。</p>
+        <p class="signature"><span></span>Lucion · 陈晞</p>
+      </div>
+      <div class="character-stage" aria-label="Lucion 个人 IP 形象">
+        <div class="sun"></div>
+        <div class="butterfly" aria-hidden="true"></div>
+        <div class="portrait"><img src="assets/character.png" alt="Lucion，穿嫩绿外套的 Q 版男性角色"></div>
+        <div class="note">grow gently</div>
+      </div>
+    </section>
+
+    <section class="values" aria-label="Lucion 品牌关键词">
+      <article class="value"><i>observe</i><p>先听见感受，再理解问题。</p></article>
+      <article class="value"><i>connect</i><p>让 HR、心理学与技术拥有更温柔的连接。</p></article>
+      <article class="value"><i>grow</i><p>在持续记录与小步行动中慢慢向前。</p></article>
+    </section>
+  </main>
+</body>
+</html>

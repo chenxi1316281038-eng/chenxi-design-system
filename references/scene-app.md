@@ -33,8 +33,8 @@ Tab栏 / 侧边栏导航
   top: 0;
   z-index: 100;
   height: 56px;
-  background: var(--cream, #fefcf6);
-  border-bottom: 1px solid rgba(26,26,26,.06);
+  background: var(--cream, #FFFDF4);
+  border-bottom: 1px solid rgba(62,66,57,.08);
   display: flex;
   align-items: center;
   padding: 0 1.5rem;
@@ -48,7 +48,7 @@ Tab栏 / 侧边栏导航
   top: 56px; left: 0; bottom: 0;
   width: 220px;
   padding: 1.5rem 1rem;
-  border-right: 1px solid rgba(26,26,26,.06);
+  border-right: 1px solid rgba(62,66,57,.08);
   overflow-y: auto;
 }
 .app-main {
@@ -80,17 +80,17 @@ App型页面色彩更简洁：
 
 | 元素 | 色值 | 说明 |
 |------|------|------|
-| 背景 | `#fefcf6` | 保持品牌暖底 |
-| 卡片 | `#fff` | 白卡片浮于背景上 |
-| Header/Badge | `var(--blue)` | 品牌蓝做主交互色 |
-| 强调/边框 | `var(--yellow)` | 黄色做border/badge |
-| 危险操作 | `var(--red)` | 红色仅用于删除/警告 |
-| 绿色板块 | `#2d6a4f` | 特殊功能板块（如梦境/自然） |
+| 背景 | `#FFFDF4` | 保持品牌暖底 |
+| 卡片 | `#FFFDF4` | 暖白卡片浮于薄荷底上 |
+| Header/Badge | `var(--blue-deep)` | 深苔绿做可读主交互色 |
+| 强调/边框 | `var(--yellow)` | 柔叶绿做 border/badge |
+| 危险操作 | `var(--red)` | 蜂蜜黄仅用于轻提醒；真实危险操作用语义红 |
+| 特殊板块 | `#37674B` | 深苔绿用于少量功能分组 |
 
 ### 分类标签扩展色
 功能页面分类标签可使用扩展色，但总色板不超6种：
 - 所有扩展色饱和度应低于主三色
-- 白色卡片底 + 品牌色header是App页面标准配色
+- 暖白卡片底 + 深苔绿交互色是 App 页面标准配色
 
 ---
 
@@ -134,7 +134,7 @@ App型页面色彩更简洁：
   justify-content: center;
 }
 .modal-content {
-  background: var(--cream, #fefcf6);
+  background: var(--cream, #FFFDF4);
   border-radius: 16px;
   padding: clamp(24px, 3vw, 40px);
   max-width: 560px;
@@ -147,33 +147,33 @@ App型页面色彩更简洁：
 ### 卡片Hover
 ```css
 .app-card {
-  background: #fff;
+  background: #FFFDF4;
   border-radius: 12px;
   padding: 1.25rem;
-  box-shadow: 0 2px 12px rgba(0,0,0,.04);
+  box-shadow: 0 2px 12px rgba(55,103,75,.08);
   transition: transform .2s, box-shadow .2s;
   cursor: pointer;
 }
 .app-card:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.08);
+  box-shadow: 0 8px 24px rgba(55,103,75,.12);
 }
 ```
 
 ### 输入Focus
 ```css
 .app-input {
-  border: 1.5px solid rgba(26,26,26,.1);
+  border: 1.5px solid rgba(62,66,57,.14);
   border-radius: 8px;
   padding: 10px 14px;
   font-size: 0.9rem;
   transition: border-color .2s;
-  background: #fff;
+  background: #FFFDF4;
 }
 .app-input:focus {
   outline: none;
-  border-color: var(--blue, #2B7FD8);
-  box-shadow: 0 0 0 3px rgba(43,127,216,0.1);
+  border-color: var(--blue-deep, #37674B);
+  box-shadow: 0 0 0 3px rgba(55,103,75,0.1);
 }
 ```
 
@@ -187,7 +187,7 @@ App型页面色彩更简洁：
 ```css
 .canvas-grid {
   width: 100%; height: 100%;
-  background-image: radial-gradient(circle, rgba(74,124,201,0.13) 1.2px, transparent 1.2px);
+  background-image: radial-gradient(circle, rgba(55,103,75,0.13) 1.2px, transparent 1.2px);
   background-size: 28px 28px;
 }
 ```
@@ -214,11 +214,11 @@ App型页面色彩更简洁：
 ### Canvas卡片（手绘感）
 ```css
 .canvas-card {
-  background: #fff;
-  border: 2px dashed rgba(74,124,201,0.35);
+  background: #FFFDF4;
+  border: 2px dashed rgba(55,103,75,0.35);
   border-radius: 16px;
   padding: 1.25rem;
-  box-shadow: 0 4px 16px rgba(0,0,0,.06);
+  box-shadow: 0 4px 16px rgba(55,103,75,.1);
 }
 ```
 
